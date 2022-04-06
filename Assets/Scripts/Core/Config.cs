@@ -1,16 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine; 
 
-/// <summary>
-/// Manages the configuration and constants of the project. 
-/// </summary>
 public static class Config
 {
-    //Global variables
     public static int controlPanelSelectedCellulo = 0; 
 
     // Scanner
-    public const float REFRESH_TIMER = 3f; // seconds after which it will stop and start scanning to refresh
+    public const float REFRESH_TIMER = 5f; // seconds after which it will stop and start scanning to refresh
 
     ///////////////////
     //// CONSTANTS ////
@@ -18,7 +14,8 @@ public static class Config
 
     // Cellulo constant
     public const int CELLULO_KEYS = 6;
-    public const float DEFAULT_CONTROL_PERIOD = 0.1f;
+
+    public static string selectedCelluloName = "";
 
     ///////////////////
     //// SCALING ////

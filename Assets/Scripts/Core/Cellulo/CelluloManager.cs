@@ -7,17 +7,14 @@ using UnityEditor;
 #endif
 
 /// <summary> 
-/// The main cellulo manager 
+/// The main game manager
 /// </summary> 
 public class CelluloManager : MonoBehaviour
 {
-    [Tooltip("Reference to the cellulo connection canvas")]
     public GameObject _celluloConnectionCanvas;
-    [Tooltip("Reference to the cellulo scan canvas")]
     public GameObject _celluloScanCanvas;
-    [Tooltip("Reference to the Cellulo Scroll List")]
+
     public ScrollRect _cellulosListScrollRect;
-    [Tooltip("Reference to the Cellulo Scroll List")]
     public GameObject _cellulosListPanel;
     public GameObject _cellulosListElementPanel;
     public GameObject _spawnedCellulos;
@@ -64,6 +61,8 @@ public class CelluloManager : MonoBehaviour
 
     // The cellulo mac address selected in the scanner view
     public static string _selectedCelluloToConnectTo = null;
+    // The id of the cellulo agent which has the local view
+    private int _localView = 0;
 		
 	/// <summary>
 	/// Set the environment variable at start and Initialize the library and scanner at start.
@@ -107,6 +106,10 @@ public class CelluloManager : MonoBehaviour
         {
             UnityEngine.Application.Quit();
         }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            SettingsCanvasControls();
+        }
     }
 
 	/// <summary>
@@ -127,8 +130,16 @@ public class CelluloManager : MonoBehaviour
     }
 
 	/// <summary>
-	/// Add CelluloAgent to the Cellulo List
+	/// Getter for the current cellulo id with the local view
 	/// </summary>
+	/// <returns>
+	/// The current cellulo id with the local view
+	/// </returns>
+    public int GetCurrentLocalView()
+    {
+        return _localView;
+    }
+
     public void AddAgent(CelluloAgent agent)
     {
         _celluloList.Add(agent.agentID, agent.gameObject);
