@@ -16,6 +16,10 @@ public class RingTrigger : MonoBehaviour
         
     }
      void OnTriggerEnter(Collider other){
-        Debug.Log(other.transform.parent.gameObject.name + " triggers.");
+        if (other.gameObject.CompareTag("GhostSheep"))
+        {
+            other.gameObject.GetComponentInParent<GhostSheepBehavior>().givePoint();
+        }
     }
+
 }

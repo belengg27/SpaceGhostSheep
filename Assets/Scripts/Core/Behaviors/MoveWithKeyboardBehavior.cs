@@ -9,6 +9,8 @@ public enum InputKeyboard{
 }
 public class MoveWithKeyboardBehavior : AgentBehaviour
 {
+
+    public int points;
     
     void Start()
     {
@@ -35,6 +37,16 @@ public class MoveWithKeyboardBehavior : AgentBehaviour
         }
 
         return steering;
+    }
+
+    public void addPoint()
+    {
+        points++;
+    }
+
+    public void removePoint()
+    {
+        points--;
     }
 
 }
