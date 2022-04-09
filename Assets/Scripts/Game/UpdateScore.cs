@@ -5,12 +5,13 @@ using TMPro;
 
 public class UpdateScore : MonoBehaviour
 {
-    public TextMeshProUGUI text;
+    private TextMeshProUGUI text;
     public GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
+        text = GetComponent<TextMeshProUGUI>();
         text.text = "0";
         setPoints();
     }
