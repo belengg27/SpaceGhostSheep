@@ -7,27 +7,46 @@ using TMPro;
 */
 public class Timer : MonoBehaviour
 {
-    private TextMeshProUGUI timerText;
+    public GameObject endScreen;
     public Slider slider;
+    private TextMeshProUGUI timerText;
     public float maxMinutes;
-    public GameManager gameManager;
-    private float timeRemaining;
+    private float timeSpent;
+
+    private bool gameOver;
 
     // Start is called before the first frame update
     public void Start() {
+        gameOver = false;
         timerText = GetComponent<TextMeshProUGUI>();
-        timeRemaining = maxMinutes * 60;
-        DisplayTime(timeRemaining);
+        maxMinutes *= 60;
+        timeSpent = 0;
+        slider.minValue = 0;
+        slider.maxValue = maxMinutes;
+        DisplayTime(timeSpent);
     }
 
     // Update is called once per frame
     public void Update() {
-        timeRemaining -= Time.deltaTime;
-        DisplayTime(timeRemaining);
+        if (gameOver) {
+            return;
+        }
+        if (timeSpent < maxMinutes) {
+            timeSpent += Time.deltaTime;
+            DisplayTime(timeSpent);
+        } else {
+            gameOver = true;
+            Time.timeScale = 0;
+            DisplayEnd();
+        }
+    }
+
+    void DisplayEnd() {
+        endScreen.SetActive(true);
     }
 
     void DisplayTime(float timeToDisplay) {
-        timeToDisplay += 1;
+        slider.value = timeToDisplay;
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
