@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class GameManager : MonoBehaviour
 
     public void StartGame() {
         Time.timeScale = 1;
+    }
+
+    public void RestartGame() {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("WelcomeScene");
     }
 
     // Update is called once per frame
