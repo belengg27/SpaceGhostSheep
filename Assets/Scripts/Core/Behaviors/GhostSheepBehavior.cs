@@ -37,7 +37,7 @@ public class GhostSheepBehavior : AgentBehaviour
             if (dist <= 5f) steering.linear = (-closest) * agent.maxAccel; 
         }
         else steering.linear = closest * agent.maxAccel;
-        steering.linear = this.transform.parent.TransformDirection(Vector3.ClampMagnitude(steering.linear, agent.maxAccel));
+        // steering.linear = this.transform.parent.TransformDirection(Vector3.ClampMagnitude(steering.linear, agent.maxAccel));
         return steering;
     }
 
