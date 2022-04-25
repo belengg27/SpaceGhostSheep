@@ -26,4 +26,15 @@ public class GameManager : MonoBehaviour
     {
                 
     }
+
+    public static void PauseGame()
+    {
+        if (Time.timeScale == 0) Time.timeScale = 1;
+        else Time.timeScale = 0;
+    }
+
+    public void MuteGame()
+    {
+        AudioListener.pause = !AudioListener.pause;
+    }
 }
