@@ -16,10 +16,17 @@ public class RingTrigger : MonoBehaviour
         
     }
      void OnTriggerEnter(Collider other){
-        if (other.gameObject.CompareTag("GhostSheep"))
+        if (other.gameObject.CompareTag("GhostSheep") && other.gameObject.GetComponentInParent<GhostSheepBehavior>().isASheep())
         {
             other.gameObject.GetComponentInParent<GhostSheepBehavior>().givePoint();
+            playSound("winPoint");
         }
+    }
+
+    public void playSound(string sound)
+    {
+        AudioSource audio = gameObject.AddComponent<AudioSource>();
+        audio.PlayOneShot((AudioClip)Resources.Load(sound));
     }
 
 }

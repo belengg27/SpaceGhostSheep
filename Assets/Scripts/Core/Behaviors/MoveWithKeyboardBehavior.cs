@@ -42,19 +42,11 @@ public class MoveWithKeyboardBehavior : AgentBehaviour
     public void addPoint()
     {
         points++;
-        playSound("winPoint");
     }
 
     public void removePoint()
     {
         points--;
-        playSound("LosePoint");
-    }
-
-    public void playSound(string sound)
-    {
-        AudioSource audio = gameObject.AddComponent<AudioSource>();
-        audio.PlayOneShot((AudioClip)Resources.Load(sound));
     }
 
 }

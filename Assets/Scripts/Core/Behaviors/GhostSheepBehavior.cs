@@ -87,7 +87,11 @@ public class GhostSheepBehavior : AgentBehaviour
     void OnCollisionEnter(Collision collision)
     {
         if (mode == Mode.ghost && collision.collider.gameObject.CompareTag("Player"))
+        {
             collision.collider.gameObject.GetComponentInParent<MoveWithKeyboardBehavior>().removePoint();
+            playSound("LosePoint");
+        }
+
     }
 
 }
