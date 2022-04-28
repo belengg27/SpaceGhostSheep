@@ -11,10 +11,13 @@ public class GhostSheepBehavior : AgentBehaviour
 {
     public Mode mode;
 
+    GameObject[] players;
+
     public bool isASheep() { return mode == Mode.sheep; }
 
     public void Start(){
         (gameObject.GetComponent("CelluloAgent") as CelluloAgent).SetVisualEffect(VisualEffect.VisualEffectConstAll, Color.green, 255);
+        (gameObject.GetComponent("CelluloAgent") as CelluloAgent).isMoved = false;
         Invoke("switchMode", Random.Range(10f, 20f));
     }
 
@@ -43,7 +46,7 @@ public class GhostSheepBehavior : AgentBehaviour
 
     public GameObject findClosestPlayer()
     {
-        GameObject[] players;
+
         players = GameObject.FindGameObjectsWithTag("Player");
         float distance = float.MaxValue;
         Vector3 position = transform.position;
@@ -63,17 +66,35 @@ public class GhostSheepBehavior : AgentBehaviour
 
     public void switchMode()
     {
+        players = GameObject.FindGameObjectsWithTag("Player");
         if (isASheep())
         {
             mode = Mode.ghost;
             (gameObject.GetComponent("CelluloAgent") as CelluloAgent).SetVisualEffect(VisualEffect.VisualEffectConstAll, Color.red, 255);
             playSound("wolf");
+            foreach (GameObject p in players)
+            {
+                if (p != null)
+                {
+                    p.GetComponentInParent<CelluloAgent>().SetCasualBackdriveAssistEnabled(false);
+                    p.GetComponentInParent<CelluloAgent>().MoveOnStone();
+                }
+            }
         }
-        else { 
+        else
+        {
             mode = Mode.sheep;
             (gameObject.GetComponent("CelluloAgent") as CelluloAgent).SetVisualEffect(VisualEffect.VisualEffectConstAll, Color.green, 255);
             playSound("Sheep-Lamb-Bah");
-        } 
+            foreach (GameObject p in players)
+            {
+                if (p != null)
+                {
+                    p.GetComponentInParent<CelluloAgent>().SetCasualBackdriveAssistEnabled(true);
+                    p.GetComponentInParent<CelluloAgent>().MoveOnIce();
+                }
+            }
+        }
 
         Invoke("switchMode", Random.Range(10f, 20f));
     }
