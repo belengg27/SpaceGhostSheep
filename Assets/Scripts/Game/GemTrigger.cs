@@ -35,6 +35,7 @@ public class GemTrigger : MonoBehaviour
     void Activate()
     {
         gameObject.SetActive(true);
+        transform.position = new Vector3(Random.Range(2, 26), 0, Random.Range(-2, -18.5f));
     }
 
 }
