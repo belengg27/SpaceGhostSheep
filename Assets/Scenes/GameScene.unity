@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.057164066, g: 0.04284589, b: 0.06109103, a: 1}
+  m_IndirectSpecularColor: {r: 0.057158872, g: 0.04283656, b: 0.06109152, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -996,6 +996,7 @@ GameObject:
   - component: {fileID: 236792156}
   - component: {fileID: 236792155}
   - component: {fileID: 236792154}
+  - component: {fileID: 236792157}
   m_Layer: 5
   m_Name: Dropdown
   m_TagString: Untagged
@@ -1081,7 +1082,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 236792157}
+        m_TargetAssemblyTypeName: PlayerMovementDropdown, Assembly-CSharp
+        m_MethodName: ChangeDropdown
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 236792154}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_Dropdown, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &236792155
 MonoBehaviour:
@@ -1121,6 +1134,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236792152}
   m_CullTransparentMesh: 1
+--- !u!114 &236792157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236792152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e802e1a73d74e446b201f4c17480f6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: {fileID: 236792154}
+  player2: {fileID: 1110397504}
 --- !u!4 &241732107 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1300460602924199586, guid: 6f5f6d7624c2ce5cc8896e584e30f1c5, type: 3}
@@ -1915,7 +1942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 1
   points: 0
-  inputKeyboard: 0
+  dropdown: {fileID: 236792154}
 --- !u!1 &522394731
 GameObject:
   m_ObjectHideFlags: 0
@@ -5584,6 +5611,7 @@ GameObject:
   - component: {fileID: 1110397506}
   - component: {fileID: 1110397505}
   - component: {fileID: 1110397504}
+  - component: {fileID: 1110397507}
   m_Layer: 5
   m_Name: Dropdown
   m_TagString: Untagged
@@ -5669,7 +5697,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1110397507}
+        m_TargetAssemblyTypeName: PlayerMovementDropdown, Assembly-CSharp
+        m_MethodName: ChangeDropdown
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1110397504}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_Dropdown, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1110397505
 MonoBehaviour:
@@ -5709,6 +5749,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110397502}
   m_CullTransparentMesh: 1
+--- !u!114 &1110397507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110397502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e802e1a73d74e446b201f4c17480f6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: {fileID: 236792154}
+  player2: {fileID: 1110397504}
 --- !u!1 &1122306726
 GameObject:
   m_ObjectHideFlags: 0
@@ -9084,7 +9138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 1
   points: 0
-  inputKeyboard: 1
+  dropdown: {fileID: 1110397504}
 --- !u!1 &1641601882
 GameObject:
   m_ObjectHideFlags: 0

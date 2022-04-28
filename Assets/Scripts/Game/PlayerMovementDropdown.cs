@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerMovementDrop : MonoBehaviour
+public class PlayerMovementDropdown : MonoBehaviour
 {
-    public Dropdown player1;
-    public Dropdown player2;
+    public TMPro.TMP_Dropdown player1;
+    public TMPro.TMP_Dropdown player2;
 
-    public void Dropdown(Dropdown dropdown) {
+    public void ChangeDropdown(TMPro.TMP_Dropdown dropdown) {
         if (dropdown == player1) {
             if (dropdown.value == 0) {
                 player2.value = 1;

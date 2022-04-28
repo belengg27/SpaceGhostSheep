@@ -11,21 +11,26 @@ public class MoveWithKeyboardBehavior : AgentBehaviour
 {
 
     public int points;
+    private InputKeyboard inputKeyboard;
+    public TMPro.TMP_Dropdown dropdown;
+
+    Steering steering = new Steering();
     
     void Start()
     {
+        inputKeyboard = (InputKeyboard)dropdown.value;
+        
         if (inputKeyboard == InputKeyboard.arrows) 
             (gameObject.GetComponent("CelluloAgent") as CelluloAgent).SetVisualEffect(VisualEffect.VisualEffectConstAll, Color.magenta, 255);
         if (inputKeyboard == InputKeyboard.wasd) 
             (gameObject.GetComponent("CelluloAgent") as CelluloAgent).SetVisualEffect(VisualEffect.VisualEffectConstAll, Color.blue, 255);
     }
 
-    public InputKeyboard inputKeyboard;
 
-    Steering steering = new Steering();
 
     public override Steering GetSteering()
     {
+        inputKeyboard = (InputKeyboard)dropdown.value;
         if (inputKeyboard == InputKeyboard.arrows) {
 
             steering.linear = new Vector3(Input.GetAxis("HorizontalArrows"), 0, Input.GetAxis("VerticalArrows")) * agent.maxAccel;
