@@ -76,7 +76,6 @@ public class GhostSheepBehavior : AgentBehaviour
             {
                 if (p != null)
                 {
-                    p.GetComponentInParent<CelluloAgent>().SetCasualBackdriveAssistEnabled(false);
                     p.GetComponentInParent<CelluloAgent>().MoveOnStone();
                 }
             }
@@ -90,8 +89,8 @@ public class GhostSheepBehavior : AgentBehaviour
             {
                 if (p != null)
                 {
+                    p.GetComponentInParent<CelluloAgent>().ClearHapticFeedback();
                     p.GetComponentInParent<CelluloAgent>().SetCasualBackdriveAssistEnabled(true);
-                    p.GetComponentInParent<CelluloAgent>().MoveOnIce();
                 }
             }
         }
