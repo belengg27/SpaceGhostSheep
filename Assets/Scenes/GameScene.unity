@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.057158872, g: 0.04283656, b: 0.06109152, a: 1}
+  m_IndirectSpecularColor: {r: 0.0571244, g: 0.042829968, b: 0.061051004, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1928,17 +1928,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ed806b23720ec49bf3b3220ba430ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &459783105 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3657785916395057768, guid: 6f5f6d7624c2ce5cc8896e584e30f1c5, type: 3}
-  m_PrefabInstance: {fileID: 555490731}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 459783103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b22fc8145a85444459acb654a0e35eb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &459783108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1952,9 +1941,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weight: 1
-  agent: {fileID: 459783105}
   points: 0
   dropdown: {fileID: 236792154}
+  touchManager: {fileID: 870575471}
 --- !u!1 &522394731
 GameObject:
   m_ObjectHideFlags: 0
@@ -2662,6 +2651,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -5
       objectReference: {fileID: 0}
+    - target: {fileID: 3657785916395057768, guid: 6f5f6d7624c2ce5cc8896e584e30f1c5, type: 3}
+      propertyPath: keyboard
+      value: 
+      objectReference: {fileID: 459783108}
     - target: {fileID: 3657785916395057768, guid: 6f5f6d7624c2ce5cc8896e584e30f1c5, type: 3}
       propertyPath: initialColor.b
       value: 0
@@ -4534,6 +4527,7 @@ GameObject:
   - component: {fileID: 870575468}
   - component: {fileID: 870575467}
   - component: {fileID: 870575470}
+  - component: {fileID: 870575471}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -4601,6 +4595,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255ba3f660a896b0dbe44a4040fdfee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &870575471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870575466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea852d3d0db20b943994298f6e71cc40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 870575470}
+  startButton: {fileID: 1930113830}
+  customButton: {fileID: 1429094871}
+  celluloManager: {fileID: 1127182799}
 --- !u!1 &942465744
 GameObject:
   m_ObjectHideFlags: 0
@@ -5829,6 +5839,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1127182799 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1300460603572157317, guid: 6f5f6d7624c2ce5cc8896e584e30f1c5, type: 3}
+  m_PrefabInstance: {fileID: 555490731}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1195028804
 GameObject:
   m_ObjectHideFlags: 0
@@ -7058,6 +7073,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 241732107}
     m_Modifications:
+    - target: {fileID: 2364173123880399170, guid: d44936f6062330e28ab4d37456de1881, type: 3}
+      propertyPath: keyboard
+      value: 
+      objectReference: {fileID: 1623873600}
     - target: {fileID: 2396450906556818873, guid: d44936f6062330e28ab4d37456de1881, type: 3}
       propertyPath: m_TagString
       value: Player
@@ -9165,9 +9184,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weight: 1
-  agent: {fileID: 0}
   points: 0
   dropdown: {fileID: 1110397504}
+  touchManager: {fileID: 870575471}
 --- !u!1 &1641601882
 GameObject:
   m_ObjectHideFlags: 0
@@ -11098,6 +11117,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1429094871}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1127182799}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6

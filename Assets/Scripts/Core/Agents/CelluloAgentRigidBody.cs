@@ -9,6 +9,8 @@ public class CelluloAgentRigidBody : CelluloAgent
 {
     private Rigidbody _rigidBody;
 
+    public MoveWithKeyboardBehavior keyboard;
+
     protected override void Awake()
     {
         base.Awake();
@@ -43,6 +45,11 @@ public class CelluloAgentRigidBody : CelluloAgent
         rotation = steering.angular == 0.0f ? 0.0f : rotation;
         velocity = transform.parent.InverseTransformDirection(_rigidBody.velocity);
 
+    }
+
+    protected override void OnLongTouch(int key)
+    {
+        keyboard.LongTouch();
     }
 
     

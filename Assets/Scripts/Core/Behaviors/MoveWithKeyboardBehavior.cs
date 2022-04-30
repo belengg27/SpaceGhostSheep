@@ -13,6 +13,8 @@ public class MoveWithKeyboardBehavior : AgentBehaviour
     public int points;
     private InputKeyboard inputKeyboard;
     public TMPro.TMP_Dropdown dropdown;
+    private bool hasLongTouched;
+    public LongTouchManager touchManager;
 
     Steering steering = new Steering();
     
@@ -24,6 +26,7 @@ public class MoveWithKeyboardBehavior : AgentBehaviour
             (gameObject.GetComponent("CelluloAgent") as CelluloAgent).SetVisualEffect(VisualEffect.VisualEffectConstAll, Color.magenta, 255);
         if (inputKeyboard == InputKeyboard.wasd) 
             (gameObject.GetComponent("CelluloAgent") as CelluloAgent).SetVisualEffect(VisualEffect.VisualEffectConstAll, Color.blue, 255);
+        hasLongTouched = false;
     }
 
 
@@ -56,4 +59,12 @@ public class MoveWithKeyboardBehavior : AgentBehaviour
         points--;
     }
 
+    public void LongTouch()
+    {
+        if (!hasLongTouched)
+        {
+            hasLongTouched = true;
+            touchManager.addLongTouch();
+        }
+    }
 }
