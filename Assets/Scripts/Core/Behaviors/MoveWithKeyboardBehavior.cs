@@ -7,12 +7,24 @@ public enum InputKeyboard{
     arrows =0, 
     wasd = 1
 }
+
+// Colors
+public enum PlayerColor {
+    magenta = 0,
+    blue = 1,
+    yellow = 2,
+    cyan = 3,
+    black = 4
+}
+
 public class MoveWithKeyboardBehavior : AgentBehaviour
 {
 
     public int points;
     private InputKeyboard inputKeyboard;
-    public TMPro.TMP_Dropdown dropdown;
+    private PlayerColor playerColor;
+    public TMPro.TMP_Dropdown movementInputDropdown;
+    public TMPro.TMP_Dropdown colorInputDropdown;
     private bool hasLongTouched;
     public LongTouchManager touchManager;
 
@@ -20,20 +32,43 @@ public class MoveWithKeyboardBehavior : AgentBehaviour
     
     void Start()
     {
-        inputKeyboard = (InputKeyboard)dropdown.value;
-        
-        if (inputKeyboard == InputKeyboard.arrows) 
-            (gameObject.GetComponent("CelluloAgent") as CelluloAgent).SetVisualEffect(VisualEffect.VisualEffectConstAll, Color.magenta, 255);
-        if (inputKeyboard == InputKeyboard.wasd) 
-            (gameObject.GetComponent("CelluloAgent") as CelluloAgent).SetVisualEffect(VisualEffect.VisualEffectConstAll, Color.blue, 255);
+        inputKeyboard = (InputKeyboard)movementInputDropdown.value;
+        playerColor = (PlayerColor)colorInputDropdown.value;
+
+        // if (inputKeyboard == InputKeyboard.arrows) 
+        //     (gameObject.GetComponent("CelluloAgent") as CelluloAgent).SetVisualEffect(VisualEffect.VisualEffectConstAll, Color.magenta, 255);
+        // if (inputKeyboard == InputKeyboard.wasd) 
+        //     (gameObject.GetComponent("CelluloAgent") as CelluloAgent).SetVisualEffect(VisualEffect.VisualEffectConstAll, Color.blue, 255);
         hasLongTouched = false;
     }
 
-
+    void Update()
+    {
+        playerColor = (PlayerColor)colorInputDropdown.value;
+        switch(playerColor) {
+            case PlayerColor.magenta:
+                (gameObject.GetComponent("CelluloAgent") as CelluloAgent).SetVisualEffect(VisualEffect.VisualEffectConstAll, Color.magenta, 255);
+                break;
+            case PlayerColor.blue:
+                (gameObject.GetComponent("CelluloAgent") as CelluloAgent).SetVisualEffect(VisualEffect.VisualEffectConstAll, Color.blue, 255);
+                break;
+            case PlayerColor.yellow:
+                (gameObject.GetComponent("CelluloAgent") as CelluloAgent).SetVisualEffect(VisualEffect.VisualEffectConstAll, Color.yellow, 255);
+                break;
+            case PlayerColor.cyan:
+                (gameObject.GetComponent("CelluloAgent") as CelluloAgent).SetVisualEffect(VisualEffect.VisualEffectConstAll, Color.cyan, 255);
+                break;
+            case PlayerColor.black:
+                (gameObject.GetComponent("CelluloAgent") as CelluloAgent).SetVisualEffect(VisualEffect.VisualEffectConstAll, Color.black, 255);
+                break;
+            default:
+                break;
+        }
+    }
 
     public override Steering GetSteering()
     {
-        inputKeyboard = (InputKeyboard)dropdown.value;
+        inputKeyboard = (InputKeyboard)movementInputDropdown.value;
         if (inputKeyboard == InputKeyboard.arrows) {
 
             steering.linear = new Vector3(Input.GetAxis("HorizontalArrows"), 0, Input.GetAxis("VerticalArrows")) * agent.maxAccel;
