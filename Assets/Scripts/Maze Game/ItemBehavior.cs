@@ -61,7 +61,7 @@ public class ItemBehavior : MonoBehaviour
                 transform.position = pinkPos[Random.Range(0, pinkPos.Length - 1)];
                 break;
             case Item.gold:
-                transform.position = pinkPos[Random.Range(0, pinkPos.Length - 1)];
+                transform.position = goldPos[Random.Range(0, pinkPos.Length - 1)];
                 break;
             default: break;
         }

@@ -15,6 +15,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("MazeGameScene");
     }
 
+    public void PlayHardMode()
+    {
+        SceneManager.LoadScene("HardGameScene");
+    }
+
     public void QuitGame()
     {
         Application.Quit();
