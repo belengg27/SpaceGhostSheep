@@ -28,11 +28,18 @@ public class ItemSwap : MonoBehaviour
             collision.collider.gameObject.GetComponentInParent<HoldingBehavior>().GrabItem(i);
             canBeSwapped = false;
             Invoke("CanBeSwapped", 1.5f);
+            playSound("PointStolen");
         }
     }
 
     void CanBeSwapped()
     {
         canBeSwapped = true;
+    }
+
+    public void playSound(string sound)
+    {
+        AudioSource audio = gameObject.AddComponent<AudioSource>();
+        audio.PlayOneShot((AudioClip)Resources.Load(sound));
     }
 }

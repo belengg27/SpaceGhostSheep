@@ -69,6 +69,7 @@ public class ItemBehavior : MonoBehaviour
 
     void Deactivate()
     {
+        playSound("PointStolen");
         gameObject.SetActive(false);
         switch (color)
         {
@@ -83,5 +84,11 @@ public class ItemBehavior : MonoBehaviour
                 break;
             default: break;
         }
+    }
+
+    public void playSound(string sound)
+    {
+        AudioSource audio = gameObject.AddComponent<AudioSource>();
+        audio.PlayOneShot((AudioClip)Resources.Load(sound));
     }
 }
