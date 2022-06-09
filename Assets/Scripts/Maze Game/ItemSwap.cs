@@ -24,8 +24,8 @@ public class ItemSwap : MonoBehaviour
         if (canBeSwapped && collision.collider.gameObject.CompareTag("Player2"))
         {
             Item i = gameObject.GetComponentInParent<HoldingBehavior>().held;
-            gameObject.GetComponentInParent<HoldingBehavior>().GrabItem(collision.collider.gameObject.GetComponentInParent<HoldingBehavior>().held);
-            collision.collider.gameObject.GetComponentInParent<HoldingBehavior>().GrabItem(i);
+            gameObject.GetComponentInParent<HoldingBehavior>().GrabItem(collision.collider.gameObject.GetComponentInParent<HoldingBehavior>().held, false);
+            collision.collider.gameObject.GetComponentInParent<HoldingBehavior>().GrabItem(i, false);
             canBeSwapped = false;
             Invoke("CanBeSwapped", 1.5f);
             playSound("PointStolen");

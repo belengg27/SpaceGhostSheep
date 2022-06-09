@@ -19,9 +19,10 @@ public class HoldingBehavior : MonoBehaviour
         
     }
 
-    public void GrabItem(Item i)
+    public void GrabItem(Item i, bool sound)
     {
         held = i;
+        if (sound) playSound("GemCollected");
     }
 
     public void DropItem()
@@ -30,12 +31,15 @@ public class HoldingBehavior : MonoBehaviour
         {
             case Item.green:
                 addPoints(1);
+                playSound("winPoint");
                 break;
             case Item.pink:
                 addPoints(2);
+                playSound("winPoint");
                 break;
             case Item.gold:
                 addPoints(3);
+                playSound("winPoint");
                 break;
             default:
                 break;
@@ -47,5 +51,11 @@ public class HoldingBehavior : MonoBehaviour
     {
         for (int j = 1; j <= i; ++j)
             gameObject.GetComponent<Movement>().addPoint();
+    }
+
+    public void playSound(string sound)
+    {
+        AudioSource audio = gameObject.AddComponent<AudioSource>();
+        audio.PlayOneShot((AudioClip)Resources.Load(sound));
     }
 }

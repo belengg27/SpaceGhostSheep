@@ -43,7 +43,7 @@ public class ItemBehavior : MonoBehaviour
         {
             if (other.gameObject.GetComponentInParent<HoldingBehavior>().held == Item.none)
             {
-                other.gameObject.GetComponentInParent<HoldingBehavior>().GrabItem(color);
+                other.gameObject.GetComponentInParent<HoldingBehavior>().GrabItem(color, true);               
                 Deactivate();
             }
         }
@@ -69,7 +69,6 @@ public class ItemBehavior : MonoBehaviour
 
     void Deactivate()
     {
-        playSound("PointStolen");
         gameObject.SetActive(false);
         switch (color)
         {
@@ -86,9 +85,5 @@ public class ItemBehavior : MonoBehaviour
         }
     }
 
-    public void playSound(string sound)
-    {
-        AudioSource audio = gameObject.AddComponent<AudioSource>();
-        audio.PlayOneShot((AudioClip)Resources.Load(sound));
-    }
+    
 }

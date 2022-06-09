@@ -4503,7 +4503,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3, y: 23}
+  m_AnchoredPosition: {x: -3, y: 14.3}
   m_SizeDelta: {x: 744.0417, y: 316.2437}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1792601347
@@ -4526,29 +4526,33 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'There are three robots: purple, blue and green.
+  m_text: 'Space ghost sheep:
 
-    The purple robot
-    belongs to the first player and can be moved using the keyboard arrows.
+    Your goal is to get as many points as possible.
 
-    The
-    blue robot belongs to the second player and can be moved using the WASD keys.
+    To
+    earn a point you have to put the green robot (sheep) in the green ring. The player
+    who''s closest to the sheep at the time will earn the point.
 
-    Your
-    goal is to get as many points as possible.
+    Randomly during
+    the game, the sheep turns into a ghost (red) that chases you. If it catches you,
+    you will lose a point.
 
-    To earn a point you have to put
-    the green robot (sheep) in the green ring. The player who''s closest to the sheep
-    at the time will earn the point.
 
-    Randomly during the game, the sheep turns
-    into a ghost (red) that chases you. If it catches you, you will lose a point.
+    The maze:
 
-    The
-    game ends in 2 minutes.
+    Navigate the maze to grab the gems
+    that randomly spawn and take them back to your zone to earn points.
 
-    You can access the pause menu at any time during
-    the game by pressing esc.
+    You
+    can only carry one gem at a time.
+
+    If you collide with the other player,
+    your carried items are swapped; if they don''t have an item yours is stolen anyway.
+
+
+    You
+    can access the pause menu at any time during the game by pressing esc.
 
     Enjoooooooooooy!'
   m_isRightToLeft: 0
@@ -4577,8 +4581,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4591,7 +4595,7 @@ MonoBehaviour:
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 80
+  m_paragraphSpacing: 60
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
@@ -4613,7 +4617,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0.73768616}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
