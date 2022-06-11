@@ -6,6 +6,8 @@ public class HoldingBehavior : MonoBehaviour
 {
 
     public Item held;
+    private bool cleared;
+    public GameObject checkMark;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,7 @@ public class HoldingBehavior : MonoBehaviour
 
     public void DropItem()
     {
+        if (!cleared) return;
         switch(held)
         {
             case Item.green:
@@ -45,6 +48,7 @@ public class HoldingBehavior : MonoBehaviour
                 break;
         }
         held = Item.none;
+        setClear(false);
     }
 
     public void addPoints(int i)
@@ -52,6 +56,14 @@ public class HoldingBehavior : MonoBehaviour
         for (int j = 1; j <= i; ++j)
             gameObject.GetComponent<Movement>().addPoint();
     }
+
+    public void setClear(bool clear)
+    {
+        cleared = clear;
+        checkMark.SetActive(clear);
+    }
+
+    public bool isCleared() { return cleared; }
 
     public void playSound(string sound)
     {

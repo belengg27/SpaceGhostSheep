@@ -570,7 +570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &173087160
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4530,17 +4530,18 @@ MonoBehaviour:
     The maze:
 
     Navigate the maze to grab the gems
-    that randomly spawn and take them back to your zone to earn points.
+    that randomly spawn and take them through the center of the maze and back to
+    your zone to earn points.
 
-    You
-    can only carry one gem at a time.
+    You can only carry one gem at a time.
 
-    If you collide with the other player,
-    your carried items are swapped; if they don''t have an item yours is stolen anyway.
+    If
+    you collide with the other player, your carried items are swapped; if they don''t
+    have an item yours is stolen anyway.
 
 
-    You
-    can access the pause menu at any time during the game by pressing esc.
+    You can access the pause menu at any
+    time during the game by pressing esc.
 
     Enjoooooooooooy!'
   m_isRightToLeft: 0
