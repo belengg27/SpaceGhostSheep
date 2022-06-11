@@ -2092,7 +2092,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 1
   points: 0
-  movementInputDropdown: {fileID: 1749463674}
+  movementInputDropdown: {fileID: 236792154}
   colorInputDropdown: {fileID: 1749463674}
   touchManager: {fileID: 870575471}
 --- !u!1 &522394731

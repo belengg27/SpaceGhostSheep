@@ -1289,6 +1289,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   held: 0
+--- !u!114 &113357711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113357708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d07190bba2ba384ab93251a693acffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 1
+  points: 0
+  movementInputDropdown: {fileID: 2136390177}
+  colorInputDropdown: {fileID: 1604436452}
+  touchManager: {fileID: 280125124}
 --- !u!1 &133683741
 GameObject:
   m_ObjectHideFlags: 0
@@ -2755,6 +2772,8 @@ GameObject:
   - component: {fileID: 280125122}
   - component: {fileID: 280125121}
   - component: {fileID: 280125123}
+  - component: {fileID: 280125125}
+  - component: {fileID: 280125124}
   m_Layer: 0
   m_Name: Event System
   m_TagString: Untagged
@@ -2832,6 +2851,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 451f720d183c0ce43b9bb8eeb8488a7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &280125124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280125118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea852d3d0db20b943994298f6e71cc40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 280125119}
+  startButton: {fileID: 301951817}
+  customButton: {fileID: 1348166452}
+  celluloManager: {fileID: 1801344838}
+--- !u!114 &280125125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280125118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255ba3f660a896b0dbe44a4040fdfee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &281823184
@@ -14754,6 +14801,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   held: 0
+--- !u!1 &1801344838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1300460603572157317, guid: 6f5f6d7624c2ce5cc8896e584e30f1c5, type: 3}
+  m_PrefabInstance: {fileID: 1801344833}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1801344839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801344835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d07190bba2ba384ab93251a693acffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 1
+  points: 0
+  movementInputDropdown: {fileID: 1787670485}
+  colorInputDropdown: {fileID: 1010951409}
+  touchManager: {fileID: 280125124}
 --- !u!114 &1801344842
 MonoBehaviour:
   m_ObjectHideFlags: 0
