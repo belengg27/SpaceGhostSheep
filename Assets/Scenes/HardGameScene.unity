@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14920995, g: 0.11938619, b: 0.15770221, a: 1}
+  m_IndirectSpecularColor: {r: 0.14913192, g: 0.119374044, b: 0.15761301, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5542,10 +5542,10 @@ MonoBehaviour:
 
     The green gem = 1 point
 
-    The pink gem = 3 points
+    The pink gem = 2 points
 
     The
-    gold gem = 5 points
+    gold gem = 3 points
 
 
     The player with the highest punctuation when the time
