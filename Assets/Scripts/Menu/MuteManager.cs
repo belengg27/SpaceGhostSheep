@@ -20,7 +20,7 @@ public class MuteManager : MonoBehaviour
         UpdateCheck();
     }
 
-    public void UpdateCheck()
+    private void UpdateCheck()
     {
         if (!isMuted) {
             check.SetActive(true);
