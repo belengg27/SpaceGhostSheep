@@ -38,8 +38,8 @@ public class Controls : MonoBehaviour {
         color1 = Enum.GetName(typeof(PlayerColor), colorDropdown1.value);
         color2 = Enum.GetName(typeof(PlayerColor), colorDropdown2.value);
 
-        player1.text = "Top left corner\nMovement:"+movement1+"\nColor: " + color1;
-        player2.text = "Bottom right corner\nMovement:"+movement2+"\nColor: " + color2;
+        player1.text = "Top left corner\nMovement: "+movement1+"\nColor: " + color1;
+        player2.text = "Bottom right corner\nMovement: "+movement2+"\nColor: " + color2;
     }
 
 
